@@ -28,6 +28,11 @@ header,
   padding: 0.5rem;
 }
 
-.label {
+header {
   font-size: 2rem;
+}
+
+.body {
+  display: grid;
+  gap: 1rem;
 }
