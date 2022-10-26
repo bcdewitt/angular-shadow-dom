@@ -24,7 +24,7 @@ export class UiHeadingComponent implements OnChanges {
   ngOnChanges(): void {
     const tagName = this.level === undefined ? 'div' : `h${this.level}`;
     this.innerHTML = this.domSanitizer.bypassSecurityTrustHtml(
-      `<${tagName}><slot></slot></${tagName}>`
+      `<${tagName} class="heading"><slot></slot></${tagName}>`
     );
   }
 }

@@ -21,9 +21,9 @@
 
 <ng-template #sectionContentsTemplate>
   <header *ngIf="heading !== '' || hasSlottedElements(headingSlotElement)">
-    <ui-heading [level]="level">
+    <ui-section-heading [level]="level">
       <ng-container *ngTemplateOutlet="headingContentsTemplate"></ng-container>
-    </ui-heading>
+    </ui-section-heading>
   </header>
 
   <div

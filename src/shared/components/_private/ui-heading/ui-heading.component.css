@@ -1,11 +1,6 @@
 /* Inherit font settings (this now qualifies as a private component when we do this) */
 :host,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.heading {
   font-style: inherit;
   font-family: inherit;
   font-weight: inherit;
@@ -17,11 +12,6 @@ h6 {
 }
 
 /* Reset for heading tags - because margins are the second worst thing about CSS after cascade */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.heading {
   margin: 0;
 }
