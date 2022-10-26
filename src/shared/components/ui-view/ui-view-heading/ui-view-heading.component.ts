@@ -20,7 +20,8 @@ import {
       }
 
       ui-heading {
-        font-size: 2rem;
+        font-family: sans-serif;
+        font-size: 1.5rem;
       }
     `,
   ],

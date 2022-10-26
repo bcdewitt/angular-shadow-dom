@@ -1,7 +1,12 @@
 <!-- Page -->
 <ui-view [level]="1" heading="Page Title">
   <!-- Card 1 -->
-  <ui-section [level]="2" heading="Card 1 Title">Example Body</ui-section>
+  <ui-section>
+    <ui-section-heading slot="heading" [level]="2">
+      Card 1 Title
+    </ui-section-heading>
+    Example Body
+  </ui-section>
 
   <!-- Card 2 -->
   <ui-section [level]="2" heading="">Example Body</ui-section>
