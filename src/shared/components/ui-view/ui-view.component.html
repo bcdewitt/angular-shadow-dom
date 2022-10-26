@@ -1,0 +1,10 @@
+<div [ngClass]="type">
+  <header>
+    <slot name="label"></slot>
+    <slot name="actions"></slot>
+  </header>
+  <slot></slot>
+  <footer>
+    <slot name="copyright"></slot>
+  </footer>
+</div>

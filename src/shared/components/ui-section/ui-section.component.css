@@ -1,0 +1,33 @@
+/* Don't put anything important here - people can override it from the outside */
+:host {
+  all: initial; /* Prevent cascade - the first worst thing about CSS */
+  display: contents; /* We do this to prevent most external CSS selectors from working (not perfect) */
+}
+
+/* Reset for heading tags - because margins are the second worst thing about CSS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+}
+
+.section {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+header,
+.body {
+  padding: 0.5rem;
+}
+
+.label {
+  font-size: 2rem;
+}

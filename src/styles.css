@@ -1,0 +1,6 @@
+/* Global CSS exists only to select and fix behaviors on elements that we can't put into components */
+html,
+body {
+  height: 100%; /* enable height: 100% for children (doesn't change design, otherwise). */
+  margin: 0; /* enable full-width/height designs. ui-view can determine how much negative space to put around its content */
+}

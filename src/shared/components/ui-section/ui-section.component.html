@@ -1,0 +1,77 @@
+<ng-container [ngSwitch]="type">
+  <article class="section" *ngSwitchCase="'article'">
+    <ng-container *ngTemplateOutlet="sectionContentsTemplate"></ng-container>
+  </article>
+  <nav class="section" *ngSwitchCase="'nav'">
+    <ng-container *ngTemplateOutlet="sectionContentsTemplate"></ng-container>
+  </nav>
+  <aside class="section" *ngSwitchCase="'aside'">
+    <ng-container *ngTemplateOutlet="sectionContentsTemplate"></ng-container>
+  </aside>
+  <address class="section" *ngSwitchCase="'address'">
+    <ng-container *ngTemplateOutlet="sectionContentsTemplate"></ng-container>
+  </address>
+  <main class="section" *ngSwitchCase="'main'">
+    <ng-container *ngTemplateOutlet="sectionContentsTemplate"></ng-container>
+  </main>
+  <section class="section" *ngSwitchDefault>
+    <ng-container *ngTemplateOutlet="sectionContentsTemplate"></ng-container>
+  </section>
+</ng-container>
+
+<ng-template #sectionContentsTemplate>
+  <header *ngIf="label !== '' || hasSlottedElements(labelSlotElement)">
+    <ng-container [ngSwitch]="level">
+      <h1 class="label" *ngSwitchCase="1">
+        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      </h1>
+      <h2 class="label" *ngSwitchCase="2">
+        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      </h2>
+      <h3 class="label" *ngSwitchCase="3">
+        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      </h3>
+      <h4 class="label" *ngSwitchCase="4">
+        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      </h4>
+      <h5 class="label" *ngSwitchCase="5">
+        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      </h5>
+      <h6 class="label" *ngSwitchCase="6">
+        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      </h6>
+      <div class="label" *ngSwitchDefault>
+        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      </div>
+    </ng-container>
+  </header>
+  <div
+    class="body"
+    *ngIf="hasSlottedElements(defaultSlotElement); else bodyContentsTemplate"
+  >
+    <ng-container *ngTemplateOutlet="bodyContentsTemplate"></ng-container>
+  </div>
+  <footer
+    *ngIf="hasSlottedElements(actionsSlotElement); else footerContentsTemplate"
+  >
+    <ng-container *ngTemplateOutlet="footerContentsTemplate"></ng-container>
+  </footer>
+</ng-template>
+
+<ng-template #labelContentsTemplate>
+  <slot (slotchange)="cdr.detectChanges()" name="label" #labelSlotElement>{{
+    label
+  }}</slot>
+</ng-template>
+
+<ng-template #bodyContentsTemplate>
+  <slot (slotchange)="cdr.detectChanges()" #defaultSlotElement></slot>
+</ng-template>
+
+<ng-template #footerContentsTemplate>
+  <slot
+    (slotchange)="cdr.detectChanges()"
+    name="actions"
+    #actionsSlotElement
+  ></slot>
+</ng-template>
