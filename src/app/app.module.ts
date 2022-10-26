@@ -3,20 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import {
-  UiViewModule,
-  UiSectionModule,
-  UiHeadingModule,
-} from '../shared/components';
+import { UiViewModule, UiSectionModule } from '../shared/components';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    UiHeadingModule,
-    UiViewModule,
-    UiSectionModule,
-  ],
+  imports: [BrowserModule, FormsModule, UiViewModule, UiSectionModule],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
