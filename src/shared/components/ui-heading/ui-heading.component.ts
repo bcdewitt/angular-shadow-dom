@@ -5,6 +5,7 @@ import {
   OnChanges,
   ViewEncapsulation,
 } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'ui-heading',
@@ -16,10 +17,14 @@ import {
 export class UiHeadingComponent implements OnChanges {
   @Input() level?: 1 | 2 | 3 | 4 | 5 | 6;
 
-  protected innerHTML = '';
+  protected innerHTML: SafeHtml = '';
+
+  constructor(private domSanitizer: DomSanitizer) {}
 
   ngOnChanges(): void {
     const tagName = this.level === undefined ? 'div' : `h${this.level}`;
-    this.innerHTML = `<${tagName}><slot></slot></${tagName}>`;
+    this.innerHTML = this.domSanitizer.bypassSecurityTrustHtml(
+      `<${tagName}><slot></slot></${tagName}>`
+    );
   }
 }
