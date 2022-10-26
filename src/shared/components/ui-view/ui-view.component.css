@@ -3,13 +3,34 @@
   display: contents;
 }
 
+/* Reset for heading tags - because margins are the second worst thing about CSS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+}
+
 .page {
+  font-family: sans-serif;
   box-sizing: border-box; /* actual height would be 1rem + 100% + 1rem without this setting */
   height: 100%;
-  padding: 1rem;
   background-color: lightgray;
 }
 
 header {
+  padding: 1rem;
   background-color: white;
+  box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.label {
+  font-size: 1.5rem;
+}
+
+.body {
+  padding: 1rem;
 }

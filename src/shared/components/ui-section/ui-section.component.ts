@@ -19,13 +19,14 @@ import {
 export class UiSectionComponent {
   @Input() type?: 'article' | 'nav' | 'aside' | 'address' | 'main';
   @Input() level?: 1 | 2 | 3 | 4 | 5 | 6;
-  @Input() label = ''; // Couldn't use "title" because it's an existing global attribute
+  @Input() heading = ''; // Couldn't use "title" because it's an existing global attribute
 
   constructor(public cdr: ChangeDetectorRef) {}
 
   @ViewChild('defaultSlotElement')
   defaultSlotElement: ElementRef<HTMLSlotElement>;
-  @ViewChild('labelSlotElement') labelSlotElement: ElementRef<HTMLSlotElement>;
+  @ViewChild('headingSlotElement')
+  headingSlotElement: ElementRef<HTMLSlotElement>;
   @ViewChild('actionsSlotElement')
   actionsSlotElement: ElementRef<HTMLSlotElement>;
 

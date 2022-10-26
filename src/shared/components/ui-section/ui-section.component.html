@@ -20,28 +20,42 @@
 </ng-container>
 
 <ng-template #sectionContentsTemplate>
-  <header *ngIf="label !== '' || hasSlottedElements(labelSlotElement)">
+  <header *ngIf="heading !== '' || hasSlottedElements(headingSlotElement)">
     <ng-container [ngSwitch]="level">
-      <h1 class="label" *ngSwitchCase="1">
-        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      <h1 class="heading" *ngSwitchCase="1">
+        <ng-container
+          *ngTemplateOutlet="headingContentsTemplate"
+        ></ng-container>
       </h1>
-      <h2 class="label" *ngSwitchCase="2">
-        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      <h2 class="heading" *ngSwitchCase="2">
+        <ng-container
+          *ngTemplateOutlet="headingContentsTemplate"
+        ></ng-container>
       </h2>
-      <h3 class="label" *ngSwitchCase="3">
-        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      <h3 class="heading" *ngSwitchCase="3">
+        <ng-container
+          *ngTemplateOutlet="headingContentsTemplate"
+        ></ng-container>
       </h3>
-      <h4 class="label" *ngSwitchCase="4">
-        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      <h4 class="heading" *ngSwitchCase="4">
+        <ng-container
+          *ngTemplateOutlet="headingContentsTemplate"
+        ></ng-container>
       </h4>
-      <h5 class="label" *ngSwitchCase="5">
-        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      <h5 class="heading" *ngSwitchCase="5">
+        <ng-container
+          *ngTemplateOutlet="headingContentsTemplate"
+        ></ng-container>
       </h5>
-      <h6 class="label" *ngSwitchCase="6">
-        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      <h6 class="heading" *ngSwitchCase="6">
+        <ng-container
+          *ngTemplateOutlet="headingContentsTemplate"
+        ></ng-container>
       </h6>
-      <div class="label" *ngSwitchDefault>
-        <ng-container *ngTemplateOutlet="labelContentsTemplate"></ng-container>
+      <div class="heading" *ngSwitchDefault>
+        <ng-container
+          *ngTemplateOutlet="headingContentsTemplate"
+        ></ng-container>
       </div>
     </ng-container>
   </header>
@@ -58,9 +72,9 @@
   </footer>
 </ng-template>
 
-<ng-template #labelContentsTemplate>
-  <slot (slotchange)="cdr.detectChanges()" name="label" #labelSlotElement>{{
-    label
+<ng-template #headingContentsTemplate>
+  <slot (slotchange)="cdr.detectChanges()" name="heading" #headingSlotElement>{{
+    heading
   }}</slot>
 </ng-template>
 
